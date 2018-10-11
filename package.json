@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/nibblet787/Check-Me-In#readme",
   "dependencies": {
-    "bcrypt": "^3.0.1",
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
