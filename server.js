@@ -58,13 +58,20 @@ app.use('/flights', flightsController);
 //___________________
 // Routes -- RELOCATED TO FLIGHTS.JS
 //___________________
-app.get('/' , (req, res) => {
-  // res.send('It\'s a-me, Ricky-o' );
-  res.render('index.ejs', {
-    flight: uri
-  })
-});
+// app.get('/' , (req, res) => {
+//   // res.send('It\'s a-me, Ricky-o' );
+//   res.render('index.ejs', {
+//     flight: Flights[req.body]
+//   })
+// });
 
+app.get('/', (req, res) => {
+    Flights.find({}, (error, allFlights) => {
+        res.render('index.ejs', {
+            flight: allFlights
+          })
+        })
+})
 //___________________
 // Seed
 //___________________
