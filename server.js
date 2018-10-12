@@ -74,13 +74,13 @@ app.use('/flights', flightsController);
 //   })
 // });
 
-// app.get('/', (req, res) => {
-//     Flights.find({}, (error, allFlights) => {
-//         res.render('index.ejs', {
-//             flight: allFlights
-//           })
-//         })
-// })
+app.get('/', (req, res) => {
+    Flights.find({}, (error, allFlights) => {
+        res.render('index.ejs', {
+            flight: allFlights
+          })
+        })
+})
 //___________________
 // Seed
 //___________________
