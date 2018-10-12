@@ -10,7 +10,7 @@ const flightDB = require('../models/flightDB.js');
 flights.get('/', (req, res) => {
     // Flights.find({}, (error, allFlights) => {
         res.render('index.ejs', {
-            flight: flightDB
+            flight: req.params.id
           })
         // })
 })
