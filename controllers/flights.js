@@ -1,7 +1,7 @@
 const express = require('express');
 const flights = express.Router();
 const Flights = require('../models/flights.js');
-const seedFlights = require('../models/seed.js');
+const flightDB = require('../models/flightDB.js');
 
 //___________________
 // Routes
@@ -10,7 +10,7 @@ const seedFlights = require('../models/seed.js');
 flights.get('/', (req, res) => {
     // Flights.find({}, (error, allFlights) => {
         res.render('index.ejs', {
-            flight: seedFlights
+            flight: flightDB
           })
         // })
 })

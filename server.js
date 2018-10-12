@@ -5,7 +5,7 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const session = require('express-session')
-const seedFlights = require('./models/seed.js');
+const flightDB = require('./models/flightDB.js');
 const Flights = require('./models/flights.js');
 const bcrypt = require('bcrypt');
 
@@ -56,7 +56,7 @@ app.use('/flights', flightsController);
 //___________________
 // Seed
 //___________________
-// Flights.create( seedFlights, ( err , data ) => {
+// Flights.create( flightDB, ( err , data ) => {
 //       if ( err ) console.log ( err.message )
 //   console.log( "added provided flight data" )
 //   }
