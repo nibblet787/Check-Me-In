@@ -12,7 +12,7 @@ flights.get('/', (req, res) => {
         res.render('index.ejs', {
             flight: allFlights
           })
-        // })
+        })
 })
 
 flights.get('/new', (req, res) => {
