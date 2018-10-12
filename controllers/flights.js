@@ -8,9 +8,9 @@ const flightDB = require('../models/flightDB.js');
 //___________________
 //localhost:3000
 flights.get('/', (req, res) => {
-    // Flights.find({}, (error, allFlights) => {
+    Flights.find({}, (error, allFlights) => {
         res.render('index.ejs', {
-            flight: req.params.id
+            flight: allFlights
           })
         // })
 })
