@@ -40,16 +40,16 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Controllers
 //___________________
-// const flightsController = require('./controllers/flights.js');
-// app.use('/flights', flightsController);
+const flightsController = require('./controllers/flights.js');
+app.use('/flights', flightsController);
 
 //___________________
-// Routes
+// Routes -- RELOCATED TO FLIGHTS.JS
 //___________________
 //localhost:3000  - this will reroute to `products`
-app.get('/' , (req, res) => {
-  res.send('It\'s a-me, Ricky-o' );
-});
+// app.get('/' , (req, res) => {
+//   res.send('It\'s a-me, Ricky-o' );
+// });
 
 //___________________
 //Listener
