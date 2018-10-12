@@ -13,10 +13,10 @@ const bcrypt = require('bcrypt');
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'check-me-in';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'check-me-in';
 
 // Connect to Mongo
-let uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
+const uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
 
 mongoose.connect(uri);
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
