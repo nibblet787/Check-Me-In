@@ -5,12 +5,14 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const session = require('express-session')
+const seedFlights = require('./models/seed.js');
+const Flights = require('./models/flights.js');
 
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'CheckMeIn';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'CheckMeIn';
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
@@ -50,7 +52,11 @@ app.use('/flights', flightsController);
 // app.get('/' , (req, res) => {
 //   res.send('It\'s a-me, Ricky-o' );
 // });
-
+// Flights.create( seedFlights, ( err , data ) => {
+//       if ( err ) console.log ( err.message )
+//   console.log( "added provided flight data" )
+//   }
+// );
 //___________________
 //Listener
 //___________________
