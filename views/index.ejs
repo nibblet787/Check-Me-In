@@ -5,6 +5,11 @@
     <title></title>
   </head>
   <body>
-    <h1>This is my index page</h1>
+    <h1>Scheduled Flight Check-ins</h1>
+      <ul>
+        <% for (i=0; i < flight.length; i++) { %>
+        <li> <%= flight[i].name %> </li>
+        <% } %>
+      </ul>
   </body>
 </html>

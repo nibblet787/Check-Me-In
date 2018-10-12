@@ -1,12 +1,13 @@
 const express = require('express');
 const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const session = require('express-session')
 const seedFlights = require('./models/seed.js');
 const Flights = require('./models/flights.js');
+const bcrypt = require('bcrypt');
 
 //Port
 //___________________
@@ -48,10 +49,13 @@ app.use('/flights', flightsController);
 //___________________
 // Routes -- RELOCATED TO FLIGHTS.JS
 //___________________
-//localhost:3000  - this will reroute to `products`
 // app.get('/' , (req, res) => {
 //   res.send('It\'s a-me, Ricky-o' );
 // });
+
+//___________________
+// Seed
+//___________________
 // Flights.create( seedFlights, ( err , data ) => {
 //       if ( err ) console.log ( err.message )
 //   console.log( "added provided flight data" )
