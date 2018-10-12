@@ -58,9 +58,9 @@ app.use('/flights', flightsController);
 //___________________
 // Routes -- RELOCATED TO FLIGHTS.JS
 //___________________
-// app.get('/' , (req, res) => {
-//   res.send('It\'s a-me, Ricky-o' );
-// });
+app.get('/' , (req, res) => {
+  res.send('It\'s a-me, Ricky-o' );
+});
 
 //___________________
 // Seed

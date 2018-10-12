@@ -7,13 +7,13 @@ const flightDB = require('../models/flightDB.js');
 // Routes
 //___________________
 //localhost:3000
-flights.get('/', (req, res) => {
-    // Flights.find({}, (error, allFlights) => {
-        res.render('index.ejs', {
-            flight: allFlights
-          })
-        // })
-})
+// flights.get('/', (req, res) => {
+//     // Flights.find({}, (error, allFlights) => {
+//         res.render('index.ejs', {
+//             flight: allFlights
+//           })
+//         // })
+// })
 
 flights.get('/new', (req, res) => {
   res.render('new.ejs');
