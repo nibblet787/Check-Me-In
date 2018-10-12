@@ -20,7 +20,8 @@ const USER = process.env.USER
 const PASS = process.env.PASS
 
 // Connect to Mongo
-const uri = 'mongodb://' + USER + ':' + PASS + '@ds129823.mlab.com:29823/check-me-in';
+const uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
+// const uri = 'mongodb://' + USER + ':' + PASS + '@ds129823.mlab.com:29823/check-me-in';
 
 mongoose.connect(uri);
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
