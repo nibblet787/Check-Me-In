@@ -59,7 +59,10 @@ app.use('/flights', flightsController);
 // Routes -- RELOCATED TO FLIGHTS.JS
 //___________________
 app.get('/' , (req, res) => {
-  res.send('It\'s a-me, Ricky-o' );
+  // res.send('It\'s a-me, Ricky-o' );
+  res.render('index.ejs', {
+    flight: uri
+  })
 });
 
 //___________________
