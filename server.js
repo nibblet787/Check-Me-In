@@ -17,16 +17,16 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'c
 // const MONGODB_URI = 'mongodb://heroku_r11kq3z2:s380d43fii3b8s529n82408srh@ds129233.mlab.com:29233/heroku_r11kq3z2'
 
 // Connect to Mongo
-const uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
+// const uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
 //
-mongoose.connect(uri);
+// mongoose.connect(uri);
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
-// mongoose.connect('mongo://mlab.uri',
-//   {
-//     username: process.env.USER,
-//     password: process.env.PASS
-//   }
-// )
+mongoose.connect('mongo://mlab.uri',
+  {
+    username: process.env.USER,
+    password: process.env.PASS
+  }
+)
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
