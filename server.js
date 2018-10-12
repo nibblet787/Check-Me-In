@@ -14,21 +14,15 @@ const bcrypt = require('bcrypt');
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
 // const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'check-me-in';
-// const MONGODB_URI = 'mongodb://heroku_r11kq3z2:s380d43fii3b8s529n82408srh@ds129233.mlab.com:29233/heroku_r11kq3z2'
+const MONGODB_URI = 'mongodb://heroku_r11kq3z2:s380d43fii3b8s529n82408srh@ds129233.mlab.com:29233/heroku_r11kq3z2'
 
 // Connect to Mongo
 const uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
 
-mongoose.connect(uri,
-  {
-    useNewUrlParser: true,
-    username: process.env.USER,
-    password: process.env.PASS
-  });
-// mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
+mongoose.connect(uri);
+mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
 // mongoose.connect('mongo://mlab.uri',
 //   {
-//     useNewUrlParser: true,
 //     username: process.env.USER,
 //     password: process.env.PASS
 //   }
