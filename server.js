@@ -16,13 +16,16 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'check-me-in';
 
 // Connect to Mongo
+let uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
+
+mongoose.connect(uri);
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
-mongoose.connect('mongo://mlab.uri',
-  {
-    username: process.env.USER,
-    password: process.env.PASS
-  }
-)
+// mongoose.connect('mongo://mlab.uri',
+//   {
+//     username: process.env.USER,
+//     password: process.env.PASS
+//   }
+// )
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
