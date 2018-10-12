@@ -21,12 +21,12 @@ const MONGODB_URI = 'mongodb://heroku_r11kq3z2:s380d43fii3b8s529n82408srh@ds1292
 
 mongoose.connect(uri);
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
-// mongoose.connect('mongo://mlab.uri',
-//   {
-//     username: process.env.USER,
-//     password: process.env.PASS
-//   }
-// )
+mongoose.connect('mongo://mlab.uri',
+  {
+    username: process.env.USER,
+    password: process.env.PASS
+  }
+)
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
