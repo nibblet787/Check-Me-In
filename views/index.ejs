@@ -2,20 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <% include partials/head.ejs %>
     <title></title>
   </head>
   <body>
     <div class="container">
       <h1>Welcome to Check Me In</h1>
-        <h2>The #1 automated check-in service on the interwebs!</h2>
-          <h3>These are our currently scheduled Flight Check-ins</h3>
-            <h5>(Click on a name for more details)</h5>
+        <h3>The #1 automated check-in service on the interwebs!</h3>
+          <h5>These are our currently scheduled Flight Check-ins</h5>
+            <h6>(Click on a name for more details)</h6>
               <ul>
                 <% for (i=0; i < flight.length; i++) { %>
                  <li>
-                   <%=[i + 1]%>: <a href="<%= flight[i].id %>"><%= flight[i].name %></a>
+                   <%=[i + 1]%>: <a href="/flights/<%= flight[i].id %>"><%= flight[i].name %></a>
                  </li>
                 <% } %>
               </ul>
+      <a href="/flights/new"><button>Create New Scheduled Check-in</button></a>
+    </div>
   </body>
 </html>
