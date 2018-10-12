@@ -3,9 +3,9 @@ const methodOverride  = require('method-override');
 const mongoose = require('mongoose');
 const app = express ();
 const db = mongoose.connection;
-require('dotenv').config()
+// require('dotenv').config()
 const session = require('express-session')
-const flightDB = require('./models/flightDB.js');
+// const flightDB = require('./models/flightDB.js');
 const Flights = require('./models/flights.js');
 const bcrypt = require('bcrypt');
 
