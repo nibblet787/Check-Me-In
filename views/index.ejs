@@ -5,12 +5,17 @@
     <title></title>
   </head>
   <body>
-    <h1>Scheduled Flight Check-ins</h1>
-      <ul>
-        Test
-        <% for (i=0; i < flight.length; i++) { %>
-        <li> <%= flight[i].name %> </li>
-        <% } %>
-      </ul>
+    <div class="container">
+      <h1>Welcome to Check Me In</h1>
+        <h2>The #1 automated check-in service on the interwebs!</h2>
+          <h3>These are our currently scheduled Flight Check-ins</h3>
+            <h5>(Click on a name for more details)</h5>
+              <ul>
+                <% for (i=0; i < flight.length; i++) { %>
+                 <li>
+                   <%=[i + 1]%>: <a href="<%= flight[i].id %>"><%= flight[i].name %></a>
+                 </li>
+                <% } %>
+              </ul>
   </body>
 </html>
