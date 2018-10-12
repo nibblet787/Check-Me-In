@@ -17,6 +17,12 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'check-m
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI , {useNewUrlParser: true});
+mongoose.connect('mongo://mlab.uri',
+  {
+    username: process.env.USER,
+    password: process.env.PASS
+  }
+)
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
