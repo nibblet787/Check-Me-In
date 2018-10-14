@@ -5,8 +5,11 @@ const flightSchema = new mongoose.Schema({
     flightNum: Number,
     airlineName: String,
     confirmationNum: Number,
-    checkInTime: Date
-});
+    checkInTime: Date,
+  }, {
+    timestamps: true
+    }
+);
 
 const Flights = mongoose.model('Flights', flightSchema);
 
