@@ -21,16 +21,19 @@ const bcrypt = require('bcrypt');
 //         })
 // })
 
+// LISTINGS CREATION PAGE -------------
 flights.get('/new', (req, res) => {
   res.render('new.ejs');
 })
 
+// DELETE LISTING ----------------
 flights.delete('/:id', (req, res) => {
   Flights.findByIdAndRemove(req.params.id, (req, data) => {
     res.redirect('/');
   })
 })
 
+// EDIT LISTING --------------
 flights.get('/:id/edit', (req, res) => {
   Flights.findById(req.params.id, (err, locateFlights) => {
     res.render('edit.ejs', {
@@ -39,18 +42,21 @@ flights.get('/:id/edit', (req, res) => {
   })
 })
 
+// APPLY LISTINGS EDITS ---------------
 flights.put('/:id', (req, res) => {
   Flights.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateModel) => {
     res.redirect('/flights/' + req.params.id);
   })
 })
 
+// APPLY NEW LISTINGS TO INDEX PAGE --------------------
 flights.post('/', (req, res) => {
   Flights.create(req.body, (err, createdFlights) => {
     res.redirect('/');
   })
 })
 
+// DISPLAY LISTING DETAILS --------------------
 flights.get('/:id', (req, res) => {
   Flights.findById(req.params.id, (err, locateFlights) => {
     res.render('show.ejs', {

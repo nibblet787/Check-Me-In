@@ -8,6 +8,7 @@
   <body>
     <div class="container">
       <h2>Automated flight check-in details for <%= flight.name %></h2>
+      <a href="/"><button>Back to Scheduled listings</button></a>
         <ul>
           <li><b>Name:  </b> <%= flight.name %> </li>
           <li><b>Airline:  </b> <%= flight.airlineName %> </li>
@@ -17,7 +18,6 @@
           <li><b>Updated At:  </b> <%= flight.updated_at %> </li>
         </ul>
         <nav>
-            <a href="/"><button>Back to Scheduled listings</button></a>
             <a href="/flights/<%= flight.id %>/edit"><button>Edit Your listing</button></a>
             <form action="/flights/<%=flight.id; %>?_method=DELETE" method="POST">
                       <input type="submit" value="Delete This Listing">
