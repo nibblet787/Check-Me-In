@@ -26,8 +26,8 @@ flights.get('/new', (req, res) => {
 })
 
 flights.delete('/:id', (req, res) => {
-  Flight.findByIdAndRemove(req.params.id, (req, data) => {
-    res.redirect('/flights');
+  Flights.findByIdAndRemove(req.params.id, (req, data) => {
+    res.redirect('/');
   })
 })
 
