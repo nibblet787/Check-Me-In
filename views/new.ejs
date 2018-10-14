@@ -7,15 +7,15 @@
   </head>
   <body>
     <h2>Don't let your check-in slip away again!</h2>
-      <h4>Enter your details below and let us take care of the rest!<h4>
+      <h4>Enter your details below and let us take care of the rest!</h4>
         <form action="/flights" method="POST">
           <ul>
             <li><b>Name:  </b> <input type="text" name="name"></li>
             <li><b>Airline:  </b> <input type="text" name="airlineName"></li>
             <li><b>Flight Number:  </b> <input type="number" name="flightNum"></li>
             <li><b>Confirmation Number:  </b> <input type="number" name="confirmationNum"></li>
-            <li><b>Check-in Date and Time:  </b> <input type="date" name="checkInTime"></li>
-            <li><b>Updated At:  </b><br>
+            <li><b>Flight Date:  </b> <input type="date" name="flightDate"></li>
+            <li><b>Check-in Time:  </b> <input type="time" name="checkInTime"></li>
               <input type="submit" value="Add Listing"/>
           </ul>
         </form>

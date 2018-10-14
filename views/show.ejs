@@ -8,14 +8,24 @@
   <body>
     <div class="container">
       <h2>Automated flight check-in details for <%= flight.name %></h2>
-      <a href="/"><button>Back to Scheduled listings</button></a>
+      <a href="/">Back to Scheduled listings</a>
         <ul>
           <li><b>Name:  </b> <%= flight.name %> </li>
           <li><b>Airline:  </b> <%= flight.airlineName %> </li>
           <li><b>Flight Number:  </b> <%= flight.flightNum %> </li>
           <li><b>Confirmation Number:  </b> <%= flight.confirmationNum %> </li>
-          <li><b>Check-in Date and Time:  </b> <%= flight.checkInTime %> </li>
-          <li><b>Updated At:  </b> <%= flight.updated_at %> </li>
+          <li><b>Flight Date:  </b> <%= flight.flightDate %> </li>
+                <% let checkIn = flight.checkInTime %>
+                <% time = flight.checkInTime.replace(':', '.'); %>
+                <% if (time > 12) { %>
+                  <% let nonMilitary = time - 12; %>
+                  <% let timeString = nonMilitary.toString(); %>
+                  <% let newTime = timeString.replace('.', ':'); %>
+                  <li><b>Check-in Time:  </b> <%= newTime %>PM </li>
+                <% } else { %>
+                  <li><b>Check-in Time:  </b> <%= checkIn %>AM </li>
+                <% } %>
+          <li><b>Updated At:  </b> <%= flight.updatedAt %> </li>
         </ul>
         <nav>
             <a href="/flights/<%= flight.id %>/edit"><button>Edit Your listing</button></a>

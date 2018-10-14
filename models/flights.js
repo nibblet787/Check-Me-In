@@ -5,7 +5,8 @@ const flightSchema = new mongoose.Schema({
     flightNum: Number,
     airlineName: String,
     confirmationNum: Number,
-    checkInTime: Date,
+    flightDate: String,
+    checkInTime: String,
   }, {
     timestamps: true
     }
