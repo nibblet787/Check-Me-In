@@ -1,7 +1,13 @@
 const express = require('express');
 const flights = express.Router();
 const Flights = require('../models/flights.js');
-const flightDB = require('../models/flightDB.js');
+// const flightDB = require('../models/flightDB.js');
+const methodOverride  = require('method-override');
+const mongoose = require('mongoose');
+const db = mongoose.connection;
+require('dotenv').config()
+const session = require('express-session')
+const bcrypt = require('bcrypt');
 
 //___________________
 // Routes
@@ -34,14 +40,14 @@ flights.get('/:id/edit', (req, res) => {
 })
 
 flights.put('/:id', (req, res) => {
-  Flights.findByIdAndUpdate(req.params.id, {new: true}, (err, updateModel) => {
-    res.redirect('/flights');
+  Flights.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateModel) => {
+    res.redirect('/flights/' + req.params.id);
   })
 })
 
 flights.post('/', (req, res) => {
   Flights.create(req.body, (err, createdFlights) => {
-    res.redirect('/flights');
+    res.redirect('/');
   })
 })
 

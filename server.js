@@ -22,7 +22,7 @@ const MONGODB_URI = 'mongodb://localhost:27017/' + 'check-me-in' || 'mongodb://h
 // const MONGODB_URI = 'mongodb://heroku_r11kq3z2:s380d43fii3b8s529n82408srh@ds129233.mlab.com:29233/heroku_r11kq3z2'
 
 
-
+app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Connect to Mongo
 const uri = 'mongodb://blah:blah787@ds129823.mlab.com:29823/check-me-in';
 
@@ -56,7 +56,7 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(express.json());// returns middleware that only parses JSON
 
 //use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+
 
 //___________________
 // Controllers
@@ -81,6 +81,15 @@ app.get('/', (req, res) => {
           })
         })
 })
+
+// app.put('/:id', (req, res) => {
+//   Flights.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateModel) => {
+//     res.redirect('/flights/:id');
+//   })
+// })
+
+// app.put('/flights/:id', (req, res))
+
 //___________________
 // Seed
 //___________________

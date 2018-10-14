@@ -1,12 +1,5 @@
 const seedFlights = [
         {
-          "name": "Joe Bob",
-          "flightNum": "6542",
-          "airlineName": "Southwest",
-          "confirmationNum": "16568463654",
-          "checkInTime": "6"
-        },
-        {
           name: 'Mary Lou',
           flightNum: 5436,
           airlineName: 'United',

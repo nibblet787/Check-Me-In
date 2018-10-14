@@ -6,6 +6,18 @@
     <title></title>
   </head>
   <body>
-    <h1>This is my edit page</h1>
+    <div class="container">
+      <h2>Change of plans? Find a better deal?</h2>
+        <h4>No problem! Just change the details below and you're good to go!<h4>
+        <form action="/flights/<%=flight.id%>/?_method=PUT" method="POST">
+          <ul>
+            <li><b>Name:  </b><input type="text" name="name" value="<%= flight.name %>"</li>
+            <li><b>Airline:  </b><input type="text" name="airlineName" value="<%= flight.airlineName %>"</li>
+            <li><b>Flight Number:  </b><input type="number" name="flightNum" value="<%= flight.flightNum %>"</li>
+            <li><b>Confirmation Number:  </b><input type="number" name="confirmationNum" value="<%= flight.confirmationNum %>"</li>
+          </ul>
+          <input type="submit" name="" value="Submit Changes">
+        </form>
+    </div>
   </body>
 </html>
