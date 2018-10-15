@@ -5,20 +5,25 @@
     <% include partials/head.ejs %>
     <title>Check Me In</title>
   </head>
+  <header class="mx-auto">
+    <img src="https://s3.envato.com/files/230100378/IMG_6728.jpg" alt="">
+    <h1>Welcome to Check Me In</h1>
+      <h3>The #1 automated check-in service on the interwebs!</h3>
+        <h5>These are our currently scheduled Flight Check-ins</h5>
+          <h6>(Click on a name for more details)</h6>
+  </header>
   <body>
     <div class="container">
-      <h1>Welcome to Check Me In</h1>
-        <h3>The #1 automated check-in service on the interwebs!</h3>
-          <h5>These are our currently scheduled Flight Check-ins</h5>
-            <h6>(Click on a name for more details)</h6>
-              <ul>
+              <ul class="flightList py-2">
                 <% for (i=0; i < flight.length; i++) { %>
                  <li>
                    <%=[i + 1]%>: <a href="/flights/<%= flight[i].id %>"><%= flight[i].name %></a>
                  </li>
                 <% } %>
               </ul>
-      <a href="/flights/new"><button>Create New Scheduled Check-in</button></a>
+              <nav>
+              <a  href="/flights/new"><button class="index-button mx-auto mt-2">Create New Scheduled Check-in</button></a>
+            </nav>
     </div>
   </body>
 </html>

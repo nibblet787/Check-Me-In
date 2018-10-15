@@ -5,11 +5,14 @@
     <% include partials/head.ejs %>
     <title>Check Me In</title>
   </head>
+  <header>
+    <h2>Automated flight check-in details for <%= flight.name %></h2>
+    <a href="/">Back to Scheduled listings</a>
+  </header>
   <body>
     <div class="container">
-      <h2>Automated flight check-in details for <%= flight.name %></h2>
-      <a href="/">Back to Scheduled listings</a>
-        <ul>
+
+        <ul class="showList">
           <li><b>Name:  </b> <%= flight.name %> </li>
           <li><b>Airline:  </b> <%= flight.airlineName %> </li>
           <li><b>Flight Number:  </b> <%= flight.flightNum %> </li>
@@ -28,10 +31,10 @@
                 <% } %>
           <li><b>Updated At:  </b> <%= flight.updatedAt %> </li>
         </ul>
-        <nav>
-            <a href="/flights/<%= flight.id %>/edit"><button>Edit Your listing</button></a>
+        <nav class="row">
+            <a class="show-edit" href="/flights/<%= flight.id %>/edit"><button>Edit Your listing</button></a>
             <form action="/flights/<%=flight.id; %>?_method=DELETE" method="POST">
-                      <input type="submit" value="Delete This Listing">
+                      <input class="show-delete" type="submit" value="Delete This Listing">
                     </form>
         </nav>
     </div>

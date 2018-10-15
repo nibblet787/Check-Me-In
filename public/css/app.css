@@ -1,8 +1,68 @@
-/* body{
-  background-color: blue;
-} */
+header {
+  text-align: center;
+  width: 100%;
+  margin: 20px;
+}
+
+body {
+  background-image: linear-gradient(rgb(4, 26, 138), rgb(156, 156, 156));
+  height: 1000px;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+
+.container {
+  height: 100%;
+  width: 80%;
+  /* align-items: stretch; */
+}
 
 li {
   list-style: none;
   text-decoration: none;
+}
+.flightList {
+  background-color: rgba(1, 1, 1, 0.5);
+  border-radius: 10px;
+  border: 1px solid white;
+  list-style: none;
+  text-decoration: none;
+  width: 30%;
+  margin: auto;
+  display: block;
+  padding: 100px auto;
+}
+
+.index-button {
+  margin: auto;
+  display: block;
+}
+
+button {
+  /* color: white; */
+}
+
+.show-edit {
+  /* margin: 0 60px 0 30px; */
+  margin: auto;
+  display: block;
+}
+
+.show-delete {
+  /* margin: 0 40px; */
+  margin: auto;
+  display: block;
+}
+
+.showList {
+  background-color: rgba(1, 1, 1, 0.5);
+  border-radius: 10px;
+  border: 1px solid white;
+  list-style: none;
+  text-decoration: none;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  display: block;
 }
