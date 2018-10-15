@@ -6,14 +6,14 @@
     <title>Check Me In</title>
   </head>
   <header>
-    <h2>Automated flight check-in details for <%= flight.name %></h2>
+    <h2>Welcome back, <%= flight.firstName %>! Here's your current check-in info:</h2>
     <a href="/">Back to Scheduled listings</a>
   </header>
   <body>
     <div class="container">
 
         <ul class="showList">
-          <li><b>Name:  </b> <%= flight.name %> </li>
+          <li><b>Name:  </b> <%= flight.firstName %> <%= flight.lastName%></li>
           <li><b>Airline:  </b> <%= flight.airlineName %> </li>
           <li><b>Flight Number:  </b> <%= flight.flightNum %> </li>
           <li><b>Confirmation Number:  </b> <%= flight.confirmationNum %> </li>

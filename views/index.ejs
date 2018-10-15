@@ -17,7 +17,7 @@
               <ul class="flightList py-2">
                 <% for (i=0; i < flight.length; i++) { %>
                  <li>
-                   <%=[i + 1]%>: <a href="/flights/<%= flight[i].id %>"><%= flight[i].name %></a>
+                   <%=[i + 1]%>: <a href="/flights/<%= flight[i].id %>"><%= flight[i].firstName %> <%= flight[i].lastName%></a>
                  </li>
                 <% } %>
               </ul>

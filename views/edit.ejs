@@ -13,7 +13,8 @@
     <div class="container ">
         <form class="py-2 " action="/flights/<%=flight.id%>/?_method=PUT" method="POST">
           <ul class="createList ">
-            <li><b>Name:</br>  </b><input class="my-2 px-4" type="text" name="name" value="<%= flight.name %>"</li>
+            <li><b>First Name:</br>  </b><input class="my-2 px-4" type="text" name="firstName" value="<%= flight.firstName %>"</li>
+            <li><b>Last Name:</br>  </b><input class="my-2 px-4" type="text" name="lastName" value="<%= flight.lastName %>"</li>
             <li><b>Airline:</br>  </b><input class="my-2 px-4" type="text" name="airlineName" value="<%= flight.airlineName %>"</li>
             <li><b>Flight Number:</br>  </b><input class="my-2 px-4" type="number" name="flightNum" value="<%= flight.flightNum %>"</li>
             <li><b>Confirmation Number:</br>  </b><input class="my-2 px-4" type="number" name="confirmationNum" value="<%= flight.confirmationNum %>"</li>
