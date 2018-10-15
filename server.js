@@ -15,7 +15,7 @@ const bcrypt = require('bcrypt');
 // const uri = 'mongodb://' + USER + ':' + PASS + '@ds129823.mlab.com:29823/check-me-in';
 
 app.use(session({
-  SECRET=feedmeseymour,
+  secret: 'feedmeseymour',
   resave: false,
   saveUninitialized: false
 }))
@@ -78,17 +78,19 @@ app.use('/flights', flightsController);
 // Routes
 //___________________
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-      currentUser: req.session.currentUser
-  });
-})
+// app.get('/', (req, res) => {
+//   res.render('index.ejs')
+  // , {
+  //     currentUser: req.session.currentUser
+  // });
+// })
 
-app.get('/app', (req, res)=>{
+app.get('/', (req, res)=>{
     if(req.session.currentUser){
-        res.render('app/index.ejs')
+        res.render('show.ejs')
     } else {
-        res.redirect('/sessions/new');
+        // res.redirect('/flights');
+        res.render('index.ejs');
     }
 })
 
