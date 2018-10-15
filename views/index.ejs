@@ -14,16 +14,10 @@
   </header>
   <body>
     <div class="container">
-              <ul class="flightList py-2">
-                <% for (i=0; i < flight.length; i++) { %>
-                 <li>
-                   <%=[i + 1]%>: <a href="/flights/<%= flight[i].id %>"><%= flight[i].firstName %> <%= flight[i].lastName%></a>
-                 </li>
-                <% } %>
-              </ul>
-              <nav>
-              <a  href="/flights/new"><button class="index-button mx-auto mt-2">Create New Scheduled Check-in</button></a>
-            </nav>
+        <a class="" href="/users/new">Sign Up</a></h2>
+          <h3>or</h3>
+            <a class="" href="/sessions/new">Log In</a>
+
     </div>
   </body>
 </html>

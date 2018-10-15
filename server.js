@@ -14,6 +14,12 @@ const bcrypt = require('bcrypt');
 // const PASS = process.env.PASS
 // const uri = 'mongodb://' + USER + ':' + PASS + '@ds129823.mlab.com:29823/check-me-in';
 
+app.use(session({
+  SECRET=feedmeseymour,
+  resave: false,
+  saveUninitialized: false
+}))
+
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
@@ -61,12 +67,31 @@ app.use(express.json());// returns middleware that only parses JSON
 //___________________
 // Controllers
 //___________________
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
+const userController = require('./controllers/users.js')
+app.use('/users', userController)
 const flightsController = require('./controllers/flights.js');
 app.use('/flights', flightsController);
 
 //___________________
-// Routes -- RELOCATED TO FLIGHTS.JS
+// Routes
 //___________________
+
+app.get('/', (req, res) => {
+  res.render('index.ejs', {
+      currentUser: req.session.currentUser
+  });
+})
+
+app.get('/app', (req, res)=>{
+    if(req.session.currentUser){
+        res.render('app/index.ejs')
+    } else {
+        res.redirect('/sessions/new');
+    }
+})
+
 // app.get('/' , (req, res) => {
 //   // res.send('It\'s a-me, Ricky-o' );
 //   res.render('index.ejs', {
@@ -74,13 +99,14 @@ app.use('/flights', flightsController);
 //   })
 // });
 
-app.get('/', (req, res) => {
-    Flights.find({}, (error, allFlights) => {
-        res.render('index.ejs', {
-            flight: allFlights
-          })
-        })
-})
+// app.get('/', (req, res) => {
+//     Flights.find({}, (error, allFlights) => {
+//         res.render('index.ejs', {
+//             flight: allFlights
+//           })
+//         })
+// })
+
 
 // app.put('/:id', (req, res) => {
 //   Flights.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateModel) => {
