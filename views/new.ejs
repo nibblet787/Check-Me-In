@@ -5,19 +5,24 @@
     <% include partials/head.ejs %>
     <title>Check Me In</title>
   </head>
-  <body>
+  <header>
     <h2>Don't let your check-in slip away again!</h2>
-      <h4>Enter your details below and let us take care of the rest!</h4>
-        <form action="/flights" method="POST">
-          <ul>
-            <li><b>Name:  </b> <input type="text" name="name"></li>
-            <li><b>Airline:  </b> <input type="text" name="airlineName"></li>
-            <li><b>Flight Number:  </b> <input type="number" name="flightNum"></li>
-            <li><b>Confirmation Number:  </b> <input type="number" name="confirmationNum"></li>
-            <li><b>Flight Date:  </b> <input type="date" name="flightDate"></li>
-            <li><b>Check-in Time:  </b> <input type="time" name="checkInTime"></li>
-              <input type="submit" value="Add Listing"/>
-          </ul>
-        </form>
+    <h4>Enter your details below and let us take care of the rest!</h4>
+  </header>
+  <body>
+    <div class="container">
+
+          <form class="py-2" action="/flights" method="POST">
+            <ul class="createList ">
+              <li><b>Name:</br>  </b> <input class="my-2 px-4" type="text" name="name"></li>
+              <li><b>Airline:</br>  </b> <input class="my-2 px-4" type="text" name="airlineName"></li>
+              <li><b>Flight Number:</br>  </b> <input class="my-2 px-4" type="number" name="flightNum"></li>
+              <li><b>Confirmation Number:</br>  </b> <input class="my-2 px-4" type="number" name="confirmationNum"></li>
+              <li><b>Flight Date:</br>  </b> <input class="my-2 px-4" type="date" name="flightDate"></li>
+              <li><b>Check-in Time:</br>  </b> <input class="my-2 px-4" type="time" name="checkInTime"></li>
+            </ul>
+            <input class="index-button mx-auto mt-2" type="submit" value="Add Listing"/>
+          </form>
+    </div>
   </body>
 </html>
