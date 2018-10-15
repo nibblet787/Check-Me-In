@@ -5,20 +5,22 @@
     <% include partials/head.ejs %>
     <title>Check Me In</title>
   </head>
+  <header>
+    <h2>Change of plans? Find a better deal?</h2>
+    <h4>No problem! Just change the details below and you're good to go!<h4>
+  </header>
   <body>
-    <div class="container">
-      <h2>Change of plans? Find a better deal?</h2>
-        <h4>No problem! Just change the details below and you're good to go!<h4>
-        <form action="/flights/<%=flight.id%>/?_method=PUT" method="POST">
-          <ul>
-            <li><b>Name:  </b><input type="text" name="name" value="<%= flight.name %>"</li>
-            <li><b>Airline:  </b><input type="text" name="airlineName" value="<%= flight.airlineName %>"</li>
-            <li><b>Flight Number:  </b><input type="number" name="flightNum" value="<%= flight.flightNum %>"</li>
-            <li><b>Confirmation Number:  </b><input type="number" name="confirmationNum" value="<%= flight.confirmationNum %>"</li>
-            <li><b>Flight Date:  </b><input type="date" name="flightDate" value="<%= flight.flightDate %>"</li>
-            <li><b>Check-in Time:  </b><input type="time" name="checkInTime" value="<%= flight.checkInTime %>"</li>
+    <div class="container ">
+        <form class="py-2 " action="/flights/<%=flight.id%>/?_method=PUT" method="POST">
+          <ul class="createList ">
+            <li><b>Name:</br>  </b><input class="my-2 px-4" type="text" name="name" value="<%= flight.name %>"</li>
+            <li><b>Airline:</br>  </b><input class="my-2 px-4" type="text" name="airlineName" value="<%= flight.airlineName %>"</li>
+            <li><b>Flight Number:</br>  </b><input class="my-2 px-4" type="number" name="flightNum" value="<%= flight.flightNum %>"</li>
+            <li><b>Confirmation Number:</br>  </b><input class="my-2 px-4" type="number" name="confirmationNum" value="<%= flight.confirmationNum %>"</li>
+            <li><b>Flight Date:</br>  </b><input class="my-2 px-4" type="date" name="flightDate" value="<%= flight.flightDate %>"</li>
+            <li><b>Check-in Time:</br>  </b><input class="my-2 px-4" type="time" name="checkInTime" value="<%= flight.checkInTime %>"</li>
           </ul>
-          <input type="submit" name="" value="Submit Changes">
+          <input class="submitButton" type="submit" name="" value="Submit Changes">
         </form>
     </div>
   </body>
