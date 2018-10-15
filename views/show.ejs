@@ -16,8 +16,8 @@
           <li><b>Confirmation Number:  </b> <%= flight.confirmationNum %> </li>
           <li><b>Flight Date:  </b> <%= flight.flightDate %> </li>
                 <% let checkIn = flight.checkInTime %>
-                <% time = flight.checkInTime.replace(':', '.'); %>
-                <% if (time > 12) { %>
+                <% time = checkIn.replace(':', '.'); %>
+                <% if (time >= 12) { %>
                   <% let nonMilitary = time - 12; %>
                   <% let timeString = nonMilitary.toString(); %>
                   <% let newTime = timeString.replace('.', ':'); %>
