@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Check Me In</title>
+    <% include partials/head.ejs %>
+  </head>
+    <body>
+        <h1>Create User</h1>
+          <form  action="/users" method="POST">
+              <div>
+                <input placeholder="Placeholder" id="username" type="text"  name="username" required>
+                <label for="username">User Name</label>
+              </div>
+              <div>
+                <input id="password" type="password" name="password" required>
+                <label for="password">Password</label>
+              </div>
+            <button type="submit" name="action">Submit</button>
+          </form>
+    </body>
+</html>
