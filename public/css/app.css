@@ -45,13 +45,14 @@ button {
 
 .show-edit {
   /* margin: 0 60px 0 30px; */
-  margin: 0.5em 7.5em 0 15.5em;
+  margin: 0.5vw 8vw 0 21.5vw;
   display: block;
 }
 
 .show-delete {
   /* margin: 0 40px; */
-  margin: 0.5em 13em 0 0;
+  /* position: relative; */
+  margin: 0.5vw 2vw 0 6vw;
   display: block;
 }
 
@@ -86,9 +87,9 @@ input {
 }
 
 .addButton {
-  margin: 0.5em 0 0 24em;
+  margin: 0.5vw 0 0 35vw;
 }
 
 .submitButton {
-  margin: 0.5em 0 0 23em;
+  margin: 0.5vw 0 0 33vw;
 }
