@@ -23,7 +23,7 @@
                 <% time = checkIn.replace(':', '.'); %>
                 <% if (time > 12) { %>
                   <% let nonMilitary = time - 12; %>
-                  <% let timeString = nonMilitary.toString(); %>
+                  <% let timeString = nonMilitary.toFixed(2); %>
                   <% let newTime = timeString.replace('.', ':'); %>
                   <li><b>Check-in Time:  </b> <%= newTime %>PM </li>
                 <% } else { %>
