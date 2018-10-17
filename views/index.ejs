@@ -7,6 +7,7 @@
   </head>
   <header class="mx-auto">
     <img src="https://i.imgur.com/PTTDYJd.jpg" alt="">
+<<<<<<< HEAD
     <h3>Hi, <%= currentUser.username %></h3>
     <h1>Welcome to Check Me In</h1>
       <h3>The #1 automated check-in service on the interwebs!</h3>
@@ -27,6 +28,25 @@
                <a  href="/flights/<%= currentUser._id %>/new"><button class="index-button mx-auto mt-2">Create New Scheduled Check-in</button></a>
                </nav>
 
+=======
+    <h1>Welcome to Check Me In</h1>
+      <h3>The #1 automated check-in service on the interwebs!</h3>
+        <h5>These are our currently scheduled Flight Check-ins</h5>
+          <h6>(Click on a name for more details)</h6>
+  </header>
+  <body>
+    <div class="container">
+              <ul class="flightList py-2">
+                <% for (i=0; i < flight.length; i++) { %>
+                 <li>
+                   <%=[i + 1]%>: <a href="/flights/<%= flight[i].id %>"><%= flight[i].firstName %> <%= flight[i].lastName%></a>
+                 </li>
+                <% } %>
+              </ul>
+              <nav>
+              <a  href="/flights/new"><button class="index-button mx-auto mt-2">Create New Scheduled Check-in</button></a>
+            </nav>
+>>>>>>> ed74a294e35cc95441a1c7e5a67856122aff409f
     </div>
   </body>
 </html>
