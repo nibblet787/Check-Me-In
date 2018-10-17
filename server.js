@@ -114,8 +114,7 @@ app.get('/destroy-route', (req, res)=>{
 //     }
 // })
 
-<<<<<<< HEAD
-=======
+
 // app.get('/', (req, res)=>{
 //     if(req.session.currentUser){
 //         res.render('show.ejs')
@@ -125,7 +124,7 @@ app.get('/destroy-route', (req, res)=>{
 //     }
 // })
 
->>>>>>> ed74a294e35cc95441a1c7e5a67856122aff409f
+
 // app.get('/' , (req, res) => {
 //   // res.send('It\'s a-me, Ricky-o' );
 //   res.render('index.ejs', {
@@ -133,7 +132,7 @@ app.get('/destroy-route', (req, res)=>{
 //   })
 // });
 
-<<<<<<< HEAD
+
 // app.get('/', (req, res) => {
 //     Flights.find({}, (error, allFlights) => {
 //         res.render('index.ejs', {
@@ -142,7 +141,7 @@ app.get('/destroy-route', (req, res)=>{
 //           })
 //         })
 // })
-=======
+
 app.get('/', (req, res) => {
     Flights.find({}, (error, allFlights) => {
         res.render('index.ejs', {
@@ -150,7 +149,7 @@ app.get('/', (req, res) => {
           })
         })
 })
->>>>>>> ed74a294e35cc95441a1c7e5a67856122aff409f
+
 
 
 // app.put('/:id', (req, res) => {
