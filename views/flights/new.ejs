@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
-    <% include ../partials/head.ejs %>
     <title>Check Me In</title>
+    <% include ../partials/head.ejs %>
   </head>
-  <header>
-    <h2>Don't let your check-in slip away again!</h2>
-    <h4>Enter your details below and let us take care of the rest!</h4>
-  </header>
-  <body>
-    <div class="container">
-          <form class="py-2" action="/flights" method="POST">
-            <ul class="createList ">
-              <li><b>First Name:</br>  </b> <input class="my-2 px-4" type="text" name="firstName"></li>
-              <li><b>Last Name:</br>  </b> <input class="my-2 px-4" type="text" name="lastName"></li>
-              <li><b>Airline:</br>  </b> <input class="my-2 px-4" type="text" name="airlineName"></li>
-              <li><b>Flight Number:</br>  </b> <input class="my-2 px-4" type="number" name="flightNum"></li>
-              <li><b>Confirmation Number:</br>  </b> <input class="my-2 px-4" type="number" name="confirmationNum"></li>
-              <li><b>Flight Date:</br>  </b> <input class="my-2 px-4" type="date" name="flightDate"></li>
-              <li><b>Check-in Time:</br>  </b> <input class="my-2 px-4" type="time" name="checkInTime"></li>
-            </ul>
-            <input class="addButton" type="submit" value="Add Listing"/>
+    <body>
+        <h1>Create User</h1>
+          <form  action="/flights" method="POST">
+              <div>
+                <input placeholder="Placeholder" id="username" type="text"  name="username" required>
+                <label for="username">User Name</label>
+              </div>
+              <div>
+                <input id="password" type="password" name="password" required>
+                <label for="password">Password</label>
+              </div>
+            <button type="submit" name="action">Submit</button>
           </form>
-    </div>
-  </body>
+    </body>
 </html>

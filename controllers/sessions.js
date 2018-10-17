@@ -1,17 +1,25 @@
-const bcrypt = require('bcrypt')
-const express = require('express')
+// const User = require('../models/users.js');
+const express = require('express');
 const sessions = express.Router()
-const User = require('../models/users.js');
+const flights = express.Router();
+const Flights = require('../models/flights.js');
+// const flightDB = require('../models/flightDB.js');
+const methodOverride  = require('method-override');
+const mongoose = require('mongoose');
+const db = mongoose.connection;
+require('dotenv').config()
+const session = require('express-session')
+const bcrypt = require('bcrypt');
 
 sessions.get('/new', (req, res) => {
   res.render('sessions/new.ejs')
 })
 
 sessions.post('/', (req, res)=>{
-    User.findOne({ username: req.body.username }, (err, foundUser) => {
+    Flights.findOne({ username: req.body.username }, (err, foundUser) => {
         if(bcrypt.compareSync(req.body.password, foundUser.password)) {
           req.session.currentUser = foundUser
-            res.redirect('/flights/' + req.session.currentUser.id)
+            res.redirect('/')
         } else {
           res.send('<a href="/">wrong password</a>')
         }

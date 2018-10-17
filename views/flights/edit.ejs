@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <% include partials/head.ejs %>
+    <% include ../partials/head.ejs %>
     <title>Check Me In</title>
   </head>
   <header>
@@ -11,8 +11,7 @@
   </header>
   <body>
     <div class="container">
-      <h2>Hi, <%= currentUser._id %></h2>
-          <form class="py-2" action="/flights/<%=currentUser._id%>/?_method=PUT" method="POST">
+          <form class="py-2" action="/users/<%=user.id%>/?_method=PUT" method="POST">
             <ul class="createList ">
               <li><b>First Name:</br>  </b> <input class="my-2 px-4" type="text" name="firstName"></li>
               <li><b>Last Name:</br>  </b> <input class="my-2 px-4" type="text" name="lastName"></li>
@@ -26,4 +25,4 @@
           </form>
     </div>
   </body>
-</html>
+</html> -->

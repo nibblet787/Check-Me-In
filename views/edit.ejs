@@ -11,15 +11,15 @@
   </header>
   <body>
     <div class="container ">
-        <form class="py-2 " action="/flights/<%=flight.id%>/?_method=PUT" method="POST">
+        <form class="py-2 " action="/flights/<%=currentUser._id%>/?_method=PUT" method="POST">
           <ul class="createList ">
-            <li><b>First Name:</br>  </b><input class="my-2 px-4" type="text" name="firstName" value="<%= flight.firstName %>"</li>
-            <li><b>Last Name:</br>  </b><input class="my-2 px-4" type="text" name="lastName" value="<%= flight.lastName %>"</li>
-            <li><b>Airline:</br>  </b><input class="my-2 px-4" type="text" name="airlineName" value="<%= flight.airlineName %>"</li>
-            <li><b>Flight Number:</br>  </b><input class="my-2 px-4" type="number" name="flightNum" value="<%= flight.flightNum %>"</li>
-            <li><b>Confirmation Number:</br>  </b><input class="my-2 px-4" type="number" name="confirmationNum" value="<%= flight.confirmationNum %>"</li>
-            <li><b>Flight Date:</br>  </b><input class="my-2 px-4" type="date" name="flightDate" value="<%= flight.flightDate %>"</li>
-            <li><b>Check-in Time:</br>  </b><input class="my-2 px-4" type="time" name="checkInTime" value="<%= flight.checkInTime %>"</li>
+            <li><b>First Name:</br>  </b><input class="my-2 px-4" type="text" name="firstName" value="<%= currentUser.firstName %>"</li>
+            <li><b>Last Name:</br>  </b><input class="my-2 px-4" type="text" name="lastName" value="<%= currentUser.lastName %>"</li>
+            <li><b>Airline:</br>  </b><input class="my-2 px-4" type="text" name="airlineName" value="<%= currentUser.airlineName %>"</li>
+            <li><b>Flight Number:</br>  </b><input class="my-2 px-4" type="number" name="flightNum" value="<%= currentUser.flightNum %>"</li>
+            <li><b>Confirmation Number:</br>  </b><input class="my-2 px-4" type="number" name="confirmationNum" value="<%= currentUser.confirmationNum %>"</li>
+            <li><b>Flight Date:</br>  </b><input class="my-2 px-4" type="date" name="flightDate" value="<%= currentUser.flightDate %>"</li>
+            <li><b>Check-in Time:</br>  </b><input class="my-2 px-4" type="time" name="checkInTime" value="<%= currentUser.checkInTime %>"</li>
           </ul>
           <input class="submitButton" type="submit" name="" value="Submit Changes">
         </form>

@@ -6,20 +6,20 @@
     <title>Check Me In</title>
   </head>
   <header>
-    <h2>Welcome back, <%= flight.firstName %>! Here's your current check-in info:</h2>
-    <a href="/">Back to Scheduled listings</a>
+    <h2>Welcome back, <%= currentUser.firstName %>! Here's your current check-in info:</h2>
+    <a href="/<%= currentUser._id %>">Back to Scheduled listings</a>
   </header>
   <body>
     <div class="container">
 
         <ul class="showList">
-          <li><b>Name:  </b> <%= flight.firstName %> <%= flight.lastName%></li>
-          <li><b>Airline:  </b> <%= flight.airlineName %> </li>
-          <li><b>Flight Number:  </b> <%= flight.flightNum %> </li>
-          <li><b>Confirmation Number:  </b> <%= flight.confirmationNum %> </li>
-          <li><b>Flight Date:  </b> <%= flight.flightDate %> </li>
+          <li><b>Name:  </b> <%= currentUser.firstName %> <%= currentUser.lastName%></li>
+          <li><b>Airline:  </b> <%= currentUser.airlineName %> </li>
+          <li><b>Flight Number:  </b> <%= currentUser.flightNum %> </li>
+          <li><b>Confirmation Number:  </b> <%= currentUser.confirmationNum %> </li>
+          <li><b>Flight Date:  </b> <%= currentUser.flightDate %> </li>
           <!-- Conversion from military time to standard -->
-                <% let checkIn = flight.checkInTime %>
+                <% let checkIn = currentUser.checkInTime %>
                 <% time = checkIn.replace(':', '.'); %>
                 <% if (time > 12) { %>
                   <% let nonMilitary = time - 12; %>
@@ -29,11 +29,11 @@
                 <% } else { %>
                   <li><b>Check-in Time:  </b> <%= checkIn %>AM </li>
                 <% } %>
-          <li><b>Updated At:  </b> <%= flight.updatedAt %> </li>
+          <li><b>Updated At:  </b> <%= currentUser.updatedAt %> </li>
         </ul>
         <nav class="row">
-            <a class="show-edit" href="/flights/<%= flight.id %>/edit"><button>Edit Your listing</button></a>
-            <form action="/flights/<%=flight.id; %>?_method=DELETE" method="POST">
+            <a class="show-edit" href="/flights/<%= currentUser._id %>/edit"><button>Edit Your listing</button></a>
+            <form action="/flights/<%=currentUser._id; %>?_method=DELETE" method="POST">
                       <input class="show-delete" type="submit" value="Delete This Listing">
                     </form>
         </nav>

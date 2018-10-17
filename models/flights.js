@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 
 const flightSchema = new mongoose.Schema({
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
-    flightNum: {type: Number, required: true},
-    airlineName: {type: String, required: true},
-    confirmationNum: {type: Number, required: true},
-    flightDate: {type: String, required: true},
-    checkInTime: {type: String, required: true},
+  username: {type: String},
+  password: {type: String},
+    firstName: {type: String},
+    lastName: {type: String},
+    flightNum: {type: Number},
+    airlineName: {type: String},
+    confirmationNum: {type: Number},
+    flightDate: {type: String},
+    checkInTime: {type: String},
   }, {
     timestamps: true
     }

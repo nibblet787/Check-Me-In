@@ -7,6 +7,7 @@ require('dotenv').config()
 const session = require('express-session')
 // const flightDB = require('./models/flightDB.js');
 const Flights = require('./models/flights.js');
+// const User = require('./models/users.js');
 const bcrypt = require('bcrypt');
 
 // This should work...but doesn't??
@@ -69,8 +70,8 @@ app.use(express.json());// returns middleware that only parses JSON
 //___________________
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
-const userController = require('./controllers/users.js')
-app.use('/users', userController)
+// const userController = require('./controllers/users.js')
+// app.use('/users', userController)
 const flightsController = require('./controllers/flights.js');
 app.use('/flights', flightsController);
 
@@ -78,21 +79,40 @@ app.use('/flights', flightsController);
 // Routes
 //___________________
 
+app.get('/', (req, res) => {
+  if(req.session.currentUser) {
+  res.render('index.ejs'
+  , {
+      currentUser: req.session.currentUser
+      // user: User
+  })
+} else {
+  // res.redirect('/sessions/new');
+  res.render('./flights/index.ejs')
+}
+});
 // app.get('/', (req, res) => {
-//   res.render('index.ejs')
-  // , {
-  //     currentUser: req.session.currentUser
-  // });
-// })
+//   res.render('/sessions')
 
-app.get('/', (req, res)=>{
-    if(req.session.currentUser){
-        res.render('show.ejs')
-    } else {
-        // res.redirect('/flights');
-        res.render('index.ejs');
-    }
-})
+app.get('/:id', (req, res) => {
+  res.render('index.ejs', {
+      currentUser: req.session.currentUser
+  })
+});
+
+app.get('/destroy-route', (req, res)=>{
+	req.session.destroy();
+  // res.redirect('/');
+  res.render('./flights/index.ejs')
+});
+
+// app.get('/', (req, res)=>{
+//     if(req.session.currentUser){
+//         res.render('/index.ejs')
+//     } else {
+//         res.redirect('/sessions/new');
+//     }
+// })
 
 // app.get('/' , (req, res) => {
 //   // res.send('It\'s a-me, Ricky-o' );
@@ -104,7 +124,8 @@ app.get('/', (req, res)=>{
 // app.get('/', (req, res) => {
 //     Flights.find({}, (error, allFlights) => {
 //         res.render('index.ejs', {
-//             flight: allFlights
+//             // flight: allFlights
+//             currentUser: req.session.currentUser
 //           })
 //         })
 // })
