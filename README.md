@@ -7,6 +7,24 @@ I used the 7 RESTful methods, basing my project heavily on our Fruits lecture. F
 ### Wins
 The end product is a modest tribute to the Fruits lecture. It embodies everything I needed it to, while adding some different styling to make it a little more professional looking. 
 
+Another win for me was figuring out how to convert a user-defined time (e.g., 9:05pm) from military time to standard. Apparently setting a "type" setting to "time" in my input HTML results in a string that corresponds to military time. So, in order to convert it, I started by getting rid of the colon (":") and replacing it with a decimal. Fortunately, the replace() function also converted it into a Number, which then enabled me to subtract 12 from it (if it's greater than 12 to begin with). Afterwards, I could limit the output to two decimal places (because it liked to, for some reason, expand my answer to 10 or more deicmal places otherwise), swap the colon back in for a proper Time display, and enter it into the user's readout. It took me awhile to figure out, but I really liked the bit-by-bit problem solving I had to do.
+
+Here's what it eventually looked like (along with the required HTML tags):
+
+```javascript
+<% let checkIn = flight.checkInTime %>
+                <% time = checkIn.replace(':', '.'); %>
+                <% if (time > 12) { %>
+                  <% let nonMilitary = time - 12; %>
+                  <% let timeString = nonMilitary.toFixed(2); %>
+                  <% let newTime = timeString.replace('.', ':'); %>
+                  <li><b>Check-in Time:  </b> <%= newTime %>PM </li>
+                <% } else { %>
+                  <li><b>Check-in Time:  </b> <%= checkIn %>AM </li>
+                <% } %>
+          <li><b>Updated At:  </b> <%= flight.updatedAt %> </li>
+```
+
 ### Struggles and Unfinished Work
 I actually finished the MVP portion somewhere around Saturday afternoon. Not content to let things stay simple, I spent an additional 35+ hours painstakingly trying to incorporate the ability to create accounts/passwords, while retaining the main feature of the website (making a check-in list). Unfortunately, I ran into numerous problems, first with getting two separate models ("Users" and "Flights") to talk to each other. Later on, I ran into a second problem when I tried combining them into one model, but deleting a Flight/Check-in list resulted in deleting the entire user's account. I simply couldn't delete the relevant info, nor could I figure out how to call the ID from one model and have it reference the second model. 
 
