@@ -101,7 +101,7 @@ app.use('/flights', flightsController);
 //   })
 // });
 
-app.get('/', (req, res) => {
+app.get('/check-me-in', (req, res) => {
     Flights.find({}, (error, allFlights) => {
         res.render('index.ejs', {
             flight: allFlights
